@@ -1,0 +1,17 @@
+var express = require('express');
+var app = express();
+app.use(express.static('img'));
+app.use(express.static('htmldir'));
+var html_dir = 'C:/simplewebpage/html/';
+app.get('/', function (req, res) {
+   
+    res.sendFile(html_dir + 'file1.html');
+
+})
+
+var server = app.listen(8089, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Example app listening at http://%s:%s", host, port)
+})
